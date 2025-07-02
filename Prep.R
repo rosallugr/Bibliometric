@@ -1,12 +1,8 @@
 # 1. Cargar librerías
-if (!require(bibliometrix)) install.packages("bibliometrix")
 library(bibliometrix)
 
-# 2. Definir archivo de entrada
-archivo <- "wos_unificado_2.txt"
+## Cuando quiera usar M en el futuro para ir diretamente a biblioshiny:
+M <- readRDS("wos_unificado.rds")
 
-# 3. Convertir archivo WoS al formato bibliometrix
-M <- convert2df(file = archivo, dbsource = "wos", format = "plaintext")
-
-# 4. Lanzar Biblioshiny con los datos
-biblioshiny(M)
+# 4. Lanzar Biblioshiny 
+biblioshiny()
